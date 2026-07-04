@@ -1,4 +1,4 @@
-'use client';
+use client';
 
 import { useState, useRef, useEffect } from 'react';
 import Link from 'next/link';
@@ -98,3 +98,4 @@ export default function DashboardShell({ profile, tabs, activeTab, children }) {
     </div>
   );
     }
+    
