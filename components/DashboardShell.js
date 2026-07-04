@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { signOut } from '../lib/auth';
 import { APP_NAME } from '../lib/config';
-
+import Logo from './Logo';
 export default function DashboardShell({ profile, tabs, activeTab, children }) {
   const router = useRouter();
   const [menuOpen, setMenuOpen] = useState(false);
@@ -33,7 +33,7 @@ export default function DashboardShell({ profile, tabs, activeTab, children }) {
       <header className="bg-forest text-white relative">
         <div className="max-w-5xl mx-auto px-4 py-4 flex items-center justify-between">
           <Link href="/" className="font-display font-bold text-lg tracking-wide">
-            {APP_NAME}
+          <Logo size={28} /> {APP_NAME}
           </Link>
 
           <div className="flex items-center gap-3" ref={menuRef}>
