@@ -1,12 +1,17 @@
+
 import Link from 'next/link';
 import { APP_NAME, APP_TAGLINE } from '../lib/config';
+import Logo from '../components/Logo';
 
 export default function HomePage() {
   return (
     <main>
       <header className="bg-forest text-white">
         <div className="max-w-5xl mx-auto px-4 py-4 flex items-center justify-between">
-          <span className="font-display text-xl font-bold">{APP_NAME}</span>
+          <span className="font-display text-xl font-bold flex items-center gap-2">
+  <Logo size={32} />
+  {APP_NAME}
+</span>
           <nav className="flex items-center gap-3">
             <Link href="/login" className="text-sm font-bold px-3 py-2">
               Sign in
