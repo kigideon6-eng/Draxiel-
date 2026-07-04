@@ -1,0 +1,85 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --forest: #1B3A1E;
+  --forest-light: #25502A;
+  --cream: #F7F5F0;
+  --gold: #C99A3E;
+  --gold-dark: #A87F2F;
+  --charcoal: #2A2A2A;
+  --line: #DEDACF;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  background: var(--cream);
+  color: var(--charcoal);
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3, h4 {
+  font-family: Georgia, Cambria, 'Times New Roman', serif;
+  font-weight: 700;
+  margin: 0;
+}
+
+a {
+  color: inherit;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+:focus-visible {
+  outline: 2px solid var(--gold-dark);
+  outline-offset: 2px;
+}
+
+.btn-primary {
+  background: var(--gold);
+  color: var(--forest-dark, #0F2411);
+  font-weight: 700;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 4px;
+  transition: background 0.15s ease;
+}
+.btn-primary:hover {
+  background: var(--gold-dark);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--forest);
+  border: 1px solid var(--forest);
+  font-weight: 700;
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+.btn-secondary:hover {
+  background: var(--forest);
+  color: white;
+}
+
+.card {
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}
