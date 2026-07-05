@@ -106,7 +106,6 @@ export default function ExpensesPanel({ profile }) {
           <input
             type="file"
             accept="image/*"
-            capture="environment"
             onChange={handleFileChange}
             disabled={uploading}
             className="hidden"
