@@ -54,6 +54,12 @@ export default function MessageThread({ orderId, currentUserId, otherUserId }) {
       sender_id: currentUserId,
       content: input.trim(),
     });
+    if (!error) {
+      await supabase.from('notifications').insert({
+        user_id: otherUserId,
+        message: 'You have a new message about an order.',
+      });
+    }
     setSending(false);
     if (!error) {
       setInput('');
