@@ -89,7 +89,10 @@ export default function DashboardShell({ profile, tabs, activeTab, children }) {
                 <p className="text-sm sm:text-base text-white/70">{profile?.state}</p>
               </div>
             </div>
-            <WeatherWidget state={profile?.state} lga={profile?.lga} />
+            <div className="flex flex-col items-end gap-2">
+              <NotificationBell userId={profile?.id} />
+              <WeatherWidget state={profile?.state} lga={profile?.lga} />
+            </div>
                   <NotificationBell userId={profile?.id} />
           </div>
           <div className="h-1 bg-gold" />
