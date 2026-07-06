@@ -8,6 +8,7 @@ import { APP_NAME } from '../lib/config';
 import Logo from './Logo';
 import WeatherWidget from './WeatherWidget';
 import NotificationBell from './NotificationBell';
+import NotificationBell from './NotificationBell';
 
 export default function DashboardShell({ profile, tabs, activeTab, children }) {
   const router = useRouter();
@@ -91,7 +92,10 @@ export default function DashboardShell({ profile, tabs, activeTab, children }) {
             </div>
             <div className="flex flex-col items-end gap-2">
               <NotificationBell userId={profile?.id} />
+              <div className="flex flex-col items-end gap-2">
+              <NotificationBell userId={profile?.id} />
               <WeatherWidget state={profile?.state} lga={profile?.lga} />
+            </div>
             </div>
                   <NotificationBell userId={profile?.id} />
           </div>
