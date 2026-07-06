@@ -106,6 +106,12 @@ export default function RecordsPanel({ profile }) {
       setDescription(data.description || '');
       setAmount(String(data.amount || ''));
       setCategory(data.category || 'other');
+      setDescription(data.description || '');
+setAmount(String(data.amount || ''));
+setCategory(data.category || 'other');
+if (data.entry_type === 'credit' || data.entry_type === 'debit') {
+  setEntryType(data.entry_type);
+}
     } catch (err) {
       setError('Could not auto-read that receipt. You can still type the details manually.');
     } finally {
