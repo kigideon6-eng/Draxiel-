@@ -7,13 +7,14 @@ export async function POST(req) {
 
   const prompt = `You are reading a photo or screenshot of a receipt, invoice, or payment
 confirmation for a Nigerian farmer's farm expense. Look carefully at all text and numbers
-in the image, including screenshots of bank transfers or mobile money payments.
-
+in the image, including screenshots of bank transfers or mobile money payment 
 Respond with only this exact JSON shape, nothing else:
+
 {
-  "description": "short description of what was bought or paid for",
+  "description": "short description of what was bought, sold, or paid for",
   "amount": (a number, the total amount in Naira, no currency symbol, no commas),
-  "category": (one of: "seeds", "fertilizer", "equipment", "labor", "transport", "other")
+  "category": (one of: "seeds", "fertilizer", "equipment", "labor", "transport", "sales", "other"),
+  "entry_type": ("credit" if this looks like money received/a sale/income, "debit" if this looks like money spent/a purchase/payment made)
 }
 
 If you can see a numeric amount anywhere in the image, use it, even if you are unsure what
