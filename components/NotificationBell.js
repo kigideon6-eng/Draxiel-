@@ -49,7 +49,7 @@ export default function NotificationBell({ userId }) {
   return (
     <div className="relative" ref={menuRef}>
       <button onClick={handleOpen} className="relative p-2 text-white" aria-label="Notifications">
-        <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path
             strokeLinecap="round"
             strokeLinejoin="round"
