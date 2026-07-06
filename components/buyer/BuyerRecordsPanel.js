@@ -211,25 +211,22 @@ export default function BuyerRecordsPanel({ profile }) {
         </form>
       )}
 
-      <div className="card p-5 mb-5">
-        <div className="mb-4">
-          <p className="text-base text-charcoal/70">Money you have spent buying goods</p>
-          <p className="text-3xl font-bold text-red-700">₦{totalDebit.toLocaleString()}</p>
-        </div>
-        <div className="mb-4">
-          <p className="text-base text-charcoal/70">Money you have made reselling goods</p>
-          <p className="text-3xl font-bold text-forest">₦{totalCredit.toLocaleString()}</p>
-        </div>
-        <div className="border-t border-line pt-4">
-          {net >= 0 ? (
-            <p className="text-lg font-bold text-forest">
-              You are making a profit of ₦{net.toLocaleString()}
+      <div className="card p-3 mb-5 inline-block">
+        <div className="flex gap-6 flex-wrap text-xs">
+          <div>
+            <p className="text-charcoal/60">Spent</p>
+            <p className="font-bold text-red-700">₦{totalDebit.toLocaleString()}</p>
+          </div>
+          <div>
+            <p className="text-charcoal/60">Made</p>
+            <p className="font-bold text-forest">₦{totalCredit.toLocaleString()}</p>
+          </div>
+          <div>
+            <p className="text-charcoal/60">{net >= 0 ? 'Profit' : 'Loss'}</p>
+            <p className={`font-bold ${net >= 0 ? 'text-forest' : 'text-red-700'}`}>
+              ₦{Math.abs(net).toLocaleString()}
             </p>
-          ) : (
-            <p className="text-lg font-bold text-red-700">
-              You have spent ₦{Math.abs(net).toLocaleString()} more than you have made
-            </p>
-          )}
+          </div>
         </div>
       </div>
 
