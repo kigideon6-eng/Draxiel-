@@ -62,6 +62,11 @@ export default function DirectMessagesPanel({ profile }) {
       sender_id: profile.id,
       content: input.trim(),
     });
+    const otherId = activeConvo.a.id === profile.id ? activeConvo.b.id : activeConvo.a.id;
+    await supabase.from('notifications').insert({
+      user_id: otherId,
+      message: 'You have a new message.',
+    });
     setInput('');
     loadMessages(activeConvo.id);
   }
