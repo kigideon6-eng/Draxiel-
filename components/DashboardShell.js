@@ -7,6 +7,7 @@ import { signOut } from '../lib/auth';
 import { APP_NAME } from '../lib/config';
 import Logo from './Logo';
 import WeatherWidget from './WeatherWidget';
+import NotificationBell from './NotificationBell';
 
 export default function DashboardShell({ profile, tabs, activeTab, children }) {
   const router = useRouter();
@@ -89,6 +90,7 @@ export default function DashboardShell({ profile, tabs, activeTab, children }) {
               </div>
             </div>
             <WeatherWidget state={profile?.state} lga={profile?.lga} />
+                  <NotificationBell userId={profile?.id} />
           </div>
           <div className="h-1 bg-gold" />
         </header>
