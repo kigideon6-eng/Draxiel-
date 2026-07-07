@@ -9,6 +9,7 @@ import RecordsPanel from '../../../components/farmer/RecordsPanel';
 import OrdersPanel from '../../../components/OrdersPanel';
 import AgronomistPanel from '../../../components/AgronomistPanel';
 import DirectMessagesPanel from '../../../components/DirectMessagesPanel';
+import EquipmentPanel from '../../../components/EquipmentPanel';
 import { getCurrentProfile } from '../../../lib/auth';
 
 export default function FarmerDashboard() {
@@ -45,6 +46,7 @@ export default function FarmerDashboard() {
     { key: 'orders', label: 'Orders', onClick: () => setActiveTab('orders') },
     { key: 'messages', label: 'Contacts & messages', onClick: () => setActiveTab('messages') },
     { key: 'agronomist', label: 'AI advisor', onClick: () => setActiveTab('agronomist') },
+    { key: 'equipment', label: 'Equipment', onClick: () => setActiveTab('equipment') },
   ];
 
   return (
@@ -55,6 +57,7 @@ export default function FarmerDashboard() {
       {activeTab === 'orders' && <OrdersPanel profile={profile} viewerRole="farmer" />}
       {activeTab === 'messages' && <DirectMessagesPanel profile={profile} />}
       {activeTab === 'agronomist' && <AgronomistPanel profile={profile} />}
+       {activeTab === 'equipment' && <EquipmentPanel profile={profile} />}
     </DashboardShell>
   );
     }
