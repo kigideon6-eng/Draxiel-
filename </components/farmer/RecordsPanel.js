@@ -238,7 +238,8 @@ export default function RecordsPanel({ profile }) {
         )}
       </div>
 
-      <div className="card p-3 mb-5 inline-block">
+     {selectedProject !== 'all' && (
+        <div className="card p-3 mb-5 inline-block">
         <div className="flex gap-6 flex-wrap text-xs">
           <div>
             <p className="text-charcoal/60">Spent</p>
