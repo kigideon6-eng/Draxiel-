@@ -234,6 +234,21 @@ export default function RecordsPanel({ profile }) {
               <option value="other">Other</option>
             </select>
           </div>
+                <div>
+            <label className="block text-xs font-bold mb-1">Which farm? (optional)</label>
+            <select
+              value={newProjectFarm}
+              onChange={(e) => setNewProjectFarm(e.target.value)}
+              className="border border-line rounded px-3 py-2 text-sm bg-white"
+            >
+              <option value="">No specific farm</option>
+              {farms.map((f) => (
+                <option key={f.id} value={f.id}>
+                  {f.name}
+                </option>
+              ))}
+            </select>
+          </div>
           <button type="submit" className="btn-primary text-sm">Create</button>
         </form>
       )}
