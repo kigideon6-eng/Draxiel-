@@ -14,10 +14,12 @@ function fileToBase64(file) {
 
 export default function RecordsPanel({ profile }) {
   const [projects, setProjects] = useState([]);
+  const [farms, setFarms] = useState([]);
   const [selectedProject, setSelectedProject] = useState('all');
   const [showNewProject, setShowNewProject] = useState(false);
   const [newProjectName, setNewProjectName] = useState('');
   const [newProjectType, setNewProjectType] = useState('crop');
+  const [newProjectFarm, setNewProjectFarm] = useState('');
 
   const [entries, setEntries] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -34,6 +36,10 @@ export default function RecordsPanel({ profile }) {
   const [reading, setReading] = useState(false);
   const [error, setError] = useState('');
 
+  async function loadFarms() {
+    const { data } = await supabase.from('farms').select('id, name').eq('owner_id', profile.id);
+    setFarms(data || []);
+  }
   async function loadProjects() {
     const { data } = await supabase
       .from('projects')
@@ -61,7 +67,10 @@ export default function RecordsPanel({ profile }) {
   }
 
   useEffect(() => {
-    if (profile?.id) loadProjects();
+    if (profile?.id) {
+      loadProjects();
+      loadFarms();
+    }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [profile?.id]);
 
@@ -85,6 +94,7 @@ export default function RecordsPanel({ profile }) {
       farmer_id: profile.id,
       name: newProjectName.trim(),
       project_type: newProjectType,
+      farm_id: newProjectFarm || null,
     });
     setNewProjectName('');
     setShowNewProject(false);
