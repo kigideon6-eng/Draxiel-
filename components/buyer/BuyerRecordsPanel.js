@@ -427,11 +427,29 @@ export default function BuyerRecordsPanel({ profile }) {
               <tfoot>
                 <tr className="bg-cream font-bold">
                   <td className="p-3" colSpan={2}>
-                    Total
+                    Total spent
+                  </td>
+                  <td className="p-3"></td>
+                  <td className="p-3 text-right text-red-700">
+                    ₦{totalDebit.toLocaleString()}
+                  </td>
+                </tr>
+                <tr className="bg-cream font-bold">
+                  <td className="p-3" colSpan={2}>
+                    Total made
+                  </td>
+                  <td className="p-3"></td>
+                  <td className="p-3 text-right text-forest">
+                    ₦{totalCredit.toLocaleString()}
+                  </td>
+                </tr>
+                <tr className="bg-cream font-bold">
+                  <td className="p-3" colSpan={2}>
+                    {net >= 0 ? 'Profit' : 'Loss'}
                   </td>
                   <td className="p-3"></td>
                   <td className={`p-3 text-right ${net >= 0 ? 'text-forest' : 'text-red-700'}`}>
-                    ₦{net.toLocaleString()}
+                    ₦{Math.abs(net).toLocaleString()}
                   </td>
                 </tr>
               </tfoot>
