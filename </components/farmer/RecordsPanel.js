@@ -258,6 +258,9 @@ export default function RecordsPanel({ profile }) {
         </div>
       </div>
 
+      </div>
+      )}
+
       <button onClick={() => setShowForm((s) => !s)} className="btn-primary text-sm mb-6">
         {showForm ? 'Cancel' : '+ Add entry'}
       </button>
