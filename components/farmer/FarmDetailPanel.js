@@ -26,10 +26,23 @@ export default function FarmDetailPanel({ farm, profile, onBack }) {
 
   async function loadEntries() {
     setLoadingEntries(true);
+    const { data: farmProjects } = await supabase
+      .from('projects')
+      .select('id')
+      .eq('farm_id', farm.id);
+
+    const projectIds = (farmProjects || []).map((p) => p.id);
+
+    if (projectIds.length === 0) {
+      setEntries([]);
+      setLoadingEntries(false);
+      return;
+    }
+
     const { data } = await supabase
       .from('expenses')
       .select('*')
-      .eq('farm_id', farm.id)
+      .in('project_id', projectIds)
       .order('created_at', { ascending: false });
     setEntries(data || []);
     setLoadingEntries(false);
