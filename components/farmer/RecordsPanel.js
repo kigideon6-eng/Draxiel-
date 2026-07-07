@@ -206,6 +206,20 @@ export default function RecordsPanel({ profile }) {
             </option>
           ))}
         </select>
+        {selectedProject !== 'all' && (
+          <button
+            onClick={async () => {
+              if (confirm('Delete this project? Entries will keep their data but lose the project link.')) {
+                await supabase.from('projects').delete().eq('id', selectedProject);
+                setSelectedProject('all');
+                loadProjects();
+              }
+            }}
+            className="text-xs text-red-700 font-bold"
+          >
+            Delete this project
+          </button>
+        )}
         <button onClick={() => setShowNewProject((s) => !s)} className="btn-secondary text-xs">
           {showNewProject ? 'Cancel' : 'New project'}
         </button>
