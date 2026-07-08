@@ -61,7 +61,7 @@ function EquipmentPaymentCallbackContent() {
             <p className="text-charcoal/70 mb-6">
               Your equipment booking is confirmed. Contact the owner to arrange the details.
             </p>
-            <button onClick={() => router.push('/farmer/dashboard')} className="btn-primary">
+            <button onClick={() => router.push('/farmer/dashboard?tab=equipment')} className="btn-primary">
               Go to my bookings
             </button>
           </>
