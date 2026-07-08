@@ -30,6 +30,13 @@ export default function FarmerDashboard() {
         return;
       }
       setProfile(p);
+
+      const params = new URLSearchParams(window.location.search);
+      const tabFromUrl = params.get('tab');
+      if (tabFromUrl) {
+        setActiveTab(tabFromUrl);
+      }
+
       setLoading(false);
     }
     load();
