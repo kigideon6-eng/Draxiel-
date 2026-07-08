@@ -71,7 +71,7 @@ function EquipmentPaymentCallbackContent() {
           <>
             <h1 className="text-xl font-bold mb-2">Payment not confirmed</h1>
             <p className="text-charcoal/70 mb-6">{message}</p>
-            <button onClick={() => router.push('/farmer/dashboard')} className="btn-secondary">
+            <button onClick={() => router.push('/farmer/dashboard?tab=equipment')} className="btn-secondary">
               Back to my bookings
             </button>
           </>
