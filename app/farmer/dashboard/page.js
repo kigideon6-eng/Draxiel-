@@ -47,13 +47,13 @@ export default function FarmerDashboard() {
   }
 
   const tabs = [
-    { key: 'listings', label: 'Listings', onClick: () => setActiveTab('listings') },
     { key: 'farms', label: 'My farms', onClick: () => setActiveTab('farms') },
     { key: 'records', label: 'Farm records', onClick: () => setActiveTab('records') },
-    { key: 'orders', label: 'Orders', onClick: () => setActiveTab('orders') },
+    { key: 'listings', label: 'Listings', onClick: () => setActiveTab('listings') },
     { key: 'messages', label: 'Contacts & messages', onClick: () => setActiveTab('messages') },
-    { key: 'agronomist', label: 'Help & advisor', onClick: () => setActiveTab('agronomist') },
+    { key: 'orders', label: 'Orders', onClick: () => setActiveTab('orders') },
     { key: 'equipment', label: 'Equipment', onClick: () => setActiveTab('equipment') },
+    { key: 'agronomist', label: 'Help & advisor', onClick: () => setActiveTab('agronomist') },
   ];
 
   return (
