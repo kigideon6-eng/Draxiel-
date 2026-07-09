@@ -227,7 +227,7 @@ export default function RecordsPanel({ profile }) {
           <option value="all">All projects</option>
           {projects.map((p) => (
             <option key={p.id} value={p.id}>
-              {p.name} ({p.project_type})
+              {p.name} ({p.project_type}){p.farms?.name ? ` — ${p.farms.name}` : ' — no farm'}
             </option>
           ))}
         </select>
