@@ -52,7 +52,7 @@ export default function FarmerDashboard() {
     { key: 'records', label: 'Farm records', onClick: () => setActiveTab('records') },
     { key: 'orders', label: 'Orders', onClick: () => setActiveTab('orders') },
     { key: 'messages', label: 'Contacts & messages', onClick: () => setActiveTab('messages') },
-    { key: 'agronomist', label: 'AI advisor', onClick: () => setActiveTab('agronomist') },
+    { key: 'agronomist', label: 'Help & advisor', onClick: () => setActiveTab('agronomist') },
     { key: 'equipment', label: 'Equipment', onClick: () => setActiveTab('equipment') },
   ];
 
