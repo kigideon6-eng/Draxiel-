@@ -32,9 +32,9 @@ export default function AgronomistPanel({ profile }) {
         }),
       });
 
-      if (!res.ok) throw new Error('The assistant did not respond.');
-
       const data = await res.json();
+
+      if (!res.ok) throw new Error(data.error || 'The assistant did not respond.');
       setMessages([...nextMessages, { role: 'assistant', content: data.reply }]);
     } catch (err) {
       setError(err.message);
