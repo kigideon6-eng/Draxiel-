@@ -190,7 +190,7 @@ export default function RecordsPanel({ profile }) {
 
     const { error: insertError } = await supabase.from('expenses').insert({
       farmer_id: profile.id,
-      project_id: entryProject || null,
+      project_id: entryProject === 'none' ? null : entryProject,
       description: description.trim(),
       amount: Number(amount),
       entry_type: entryType,
