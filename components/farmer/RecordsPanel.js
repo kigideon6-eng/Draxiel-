@@ -272,14 +272,17 @@ export default function RecordsPanel({ profile }) {
               Which project is this for? (so it shows on that farm's page)
             </label>
             <select
-              value={entryProject}
+              value={entryProject === null ? '' : entryProject}
               onChange={(e) => setEntryProject(e.target.value)}
               className="w-full border border-line rounded px-3 py-2 text-sm bg-white mb-2"
             >
-              <option value="">No project (general record only)</option>
+              <option value="" disabled>
+                — Choose one —
+              </option>
+              <option value="none">No project (general record only)</option>
               {projects.map((p) => (
                 <option key={p.id} value={p.id}>
-                  {p.name}
+                  {p.name} ({p.project_type}){p.farms?.name ? ` — ${p.farms.name}` : ' — no farm'}
                 </option>
               ))}
             </select>
