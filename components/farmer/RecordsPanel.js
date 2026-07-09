@@ -169,6 +169,10 @@ export default function RecordsPanel({ profile }) {
       setError('Enter a description and amount.');
       return;
     }
+    if (entryProject === null) {
+      setError('Please choose a project, or choose "No project" if this entry is not tied to a farm.');
+      return;
+    }
 
     setSaving(true);
     let receiptUrl = null;
