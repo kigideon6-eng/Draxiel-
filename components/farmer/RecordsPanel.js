@@ -26,7 +26,7 @@ export default function RecordsPanel({ profile }) {
   const [entryType, setEntryType] = useState('debit');
   const [category, setCategory] = useState('other');
   const [notes, setNotes] = useState('');
-  const [entryProject, setEntryProject] = useState('');
+  const [entryProject, setEntryProject] = useState(null);
   const [receiptFile, setReceiptFile] = useState(null);
   const [saving, setSaving] = useState(false);
   const [reading, setReading] = useState(false);
