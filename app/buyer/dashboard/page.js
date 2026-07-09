@@ -42,7 +42,7 @@ export default function BuyerDashboard() {
     { key: 'orders', label: 'My orders', onClick: () => setActiveTab('orders') },
     { key: 'records', label: 'Trading records', onClick: () => setActiveTab('records') },
     { key: 'messages', label: 'Contacts & messages', onClick: () => setActiveTab('messages') },
-    { key: 'agronomist', label: 'AI advisor', onClick: () => setActiveTab('agronomist') },
+    { key: 'agronomist', label: 'Help', onClick: () => setActiveTab('agronomist') },
   ];
 
   return (
