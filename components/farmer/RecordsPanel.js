@@ -46,7 +46,7 @@ export default function RecordsPanel({ profile }) {
   async function loadProjects() {
     const { data } = await supabase
       .from('projects')
-      .select('*')
+      .select('*, farms(name)')
       .eq('farmer_id', profile.id)
       .order('created_at', { ascending: false });
     setProjects(data || []);
